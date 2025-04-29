@@ -1,0 +1,23 @@
+<img [src]="imageFeed" class="center-img">
+
+<br>
+<br>
+<br>
+
+<div class="center-box">
+<p-floatlabel>
+    <input pInputText id="over_label" [(ngModel)]="videoUrlText" autocomplete="off" pSize="large"  style="width: 500px;"/>
+    <label for="over_label">Enter a MotionJPEG (MJPEG) video streaming URL</label>
+</p-floatlabel>
+</div>
+
+<br>
+
+<div class="center-box">
+<section>
+    <div class="example-button-row">
+      <button mat-raised-button (click)="play()" [disabled]="playButtonDisabled">Play</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-raised-button (click)="record()" [disabled]="recordButtonDisabled" >Record</button>
+    </div>
+  </section>
+</div>
