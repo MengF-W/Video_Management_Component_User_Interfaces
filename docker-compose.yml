@@ -1,0 +1,7 @@
+services:
+  application:
+    container_name: video_management_component_user_interfaces
+    image: video_management_component_user_interfaces:0.0.1
+    restart: always
+    ports:
+      - "4200:4200"
