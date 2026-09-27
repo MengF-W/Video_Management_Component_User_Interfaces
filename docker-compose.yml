@@ -5,3 +5,10 @@ services:
     restart: always
     ports:
       - "4200:4200"
+
+  nginx_http_hosting_server:
+    container_name: nginx_http_server
+    image: nginx_http_server
+    ports:
+      - "80:80"
+    restart: always
