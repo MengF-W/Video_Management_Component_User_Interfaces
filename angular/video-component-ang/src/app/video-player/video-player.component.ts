@@ -31,6 +31,8 @@ export class VideoPlayerComponent implements OnInit{
 
   play() { 
     let verifiedPlayableUrl: boolean | undefined;
+    this.imageFeed = "waiting.png";
+    this.playButtonDisabled = true;
 
     this.videoPlayerService.play(this.videoUrlText).then(
       responseText => {
@@ -43,16 +45,21 @@ export class VideoPlayerComponent implements OnInit{
         }
         else { 
           this.imageFeed = "not_playable.png";
+          this.playButtonDisabled = false;
         }
     },
       error => {
           this.imageFeed = "not_playable.png";
+          this.playButtonDisabled = false;
       })
   }
   
   record() {
-    
+    this.imageFeed = "waiting.png";
+    this.recordButtonDisabled = true;
+
     this.videoPlayerService.record(this.videoUrlText).subscribe((response) => {
+
       const contentDisposition = response.headers.get('Content-Disposition');
       const filenameRegex = /filename[^;=\n]*=(([‘"]).*?\2|[^;\n]*)/;
       const matches = filenameRegex.exec(contentDisposition);
@@ -64,7 +71,8 @@ export class VideoPlayerComponent implements OnInit{
           { type: 'video/mp4' });
       
       saveAs(blob, filename);
-
+      this.imageFeed = this.videoUrlText;
+      this.recordButtonDisabled = false;
     },
       error => {
         console.error('Error recording the video', error);
