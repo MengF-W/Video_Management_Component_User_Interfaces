@@ -26,6 +26,18 @@ The Video Management Component User Interfaces act as an interaction place betwe
 1. `cd video-component-ang` - Navigate to the project folder
 2. `npm install` - Install the dependencies
 3. `ng serve` - Start the serve and access http://localhost:4200 from the browser
+   
+# Docker Image Command
+`docker build -t video_management_component_user_interfaces .`    -To build the docker image
+
+# Docker Container Command
+`docker-compose up -d`      -To start the docker container from the docker image with the docker compose file configuration 
+
+# Publish
+It has been published and can be accessed at https://video-management-component-user-d7dg.onrender.com . Example MotionJPEG(MJPEG) video streaming url can be found [here](https://github.com/fury999io/public-ip-cams). Due to [mixed content security restriction](https://web.dev/articles/what-is-mixed-content), only video streaming url with HTTPS can be played at the moment.
+<img width="1601" height="1026" alt="image" src="https://github.com/user-attachments/assets/0222e110-a3ec-4e11-a973-49bb8b75606b" />
+
+
 
 # Infomation about video streaming and MJPEG
 * [MJPEG - Motion JPEG File Format](https://docs.fileformat.com/video/mjpeg/)
