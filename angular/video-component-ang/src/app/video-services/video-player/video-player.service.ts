@@ -21,7 +21,7 @@ export class VideoPlayerService {
 
   public record(videoUrlText: string):Observable<any> { 
     
-    return this.httpClient.post(this.recordService, { video_url: videoUrlText }, { observe: 'response', responseType: 'blob' });
+    return this.httpClient.post(this.recordService,{ video_url: videoUrlText }, { headers: {'Access-Control-Expose-Headers': 'Content-Disposition'},observe: 'response', responseType: 'blob' });
 
   }
 }
